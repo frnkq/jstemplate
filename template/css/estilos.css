@@ -1,0 +1,107 @@
+.frmAlta{
+
+    width: 40%;
+    
+    position: fixed;    
+    top: 50%;
+    left: 50%;
+    border-radius: 30px;
+    background-image: url("../images/avatar.jpg");
+    background-size: 50%;
+    background-color: rgba(45, 218, 117, 1 );
+    transform: translate(-50%, -50%);
+    color: rgb(199, 52, 33);
+    font-weight: bold;   
+    padding:30px;
+}
+body{
+
+    background-color: rgb(96, 160, 245);
+    padding-top: 0px;
+    margin-left: 150px;
+    margin-right: 150px;
+
+}
+
+#tablaLista{
+    border: 1px solid black;
+    width: 50%;
+}
+
+#bodyTabla{
+    text-align: center;
+    border: 1px solid black;
+}
+
+#logo{
+    width: 500px;    
+    position: relative;
+    top: 50px;
+    left: 30px;
+    
+}
+
+header{
+    
+    margin-top: 0px;
+    height: 500px;    
+    background-image: url("../images/free-people-icon-vector.jpg");
+}
+
+#tablaLista{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+nav{
+    background-color: rgb(221, 67, 98);
+    padding: 10px;
+}
+
+#tablaLista td{
+    background-color: rgb(221, 67, 98);
+}
+
+
+#tablaLista th{
+    background-color: rgb(67, 82, 221);
+}
+
+#btnAlta{
+
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+    background-color: rgb(109, 216, 136);
+    
+}
+
+#divFrm
+{
+    display:none;
+    z-index:500;
+}
+
+.formStyle
+{
+    background-color: rgba(45, 126, 218, .7);
+    width:33%;
+    margin-left:33%;
+    padding: 10px;
+}
+
+#spinner
+{
+    position:absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-left:33%;
+    display:none;
+    z-index:300;
+}
+
+#filters
+{
+    
+}

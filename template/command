@@ -1,0 +1,3 @@
+tsc Entidades/Persona.ts CRUD/PersonasCrud.ts Helpers/TableHelper.ts Helpers/FormHelper.ts Program.ts --outFile ../js/script.js
+
+tsc --target es5 Entidades/Persona.ts CRUD/PersonasCrud.ts Helpers/TableHelper.ts Helpers/FormHelper.ts Program.ts --outFile ../js/script.js 

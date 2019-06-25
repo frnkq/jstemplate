@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/estilos.css">
+   <!-- 
+    <script src="./scripts/despachador_server.js"></script>
+    -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./js/script.js"></script>
+    <title>ABM Personas</title>
+</head>
+
+<body class="container">
+    <header>
+
+    </header>
+    <nav>
+        <input type="button" value="Agregar" id="btnAlta" class="puntero">
+        <div id="filters" class="text-center"></div>
+        <div id="columns" class="text-center"></div>
+        <div id="datos"></div>
+    </nav>
+    <div id="spinner"><img src="images/spinner.gif"></div>                    
+    
+    <div id="divFrm" class="frmAlta text-center" >
+
+    </div>
+    <div id="divTabla">
+        <table id="tablaLista">
+            <thead>
+                <tr>
+                    <th class="col td_id">ID</th>
+                    <th class="col td_nombre">Nombre</th>
+                    <th class="col td_apellido">Apellido</th>
+                    <th class="col td_edad">Edad</th>
+                    <th class="col td_email">Email</th>
+                    <th class="col td_sexo">Gender</th>
+                </tr>
+            </thead>
+            
+            <tbody id="bodyTabla">
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>
