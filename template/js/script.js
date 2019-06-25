@@ -198,6 +198,26 @@ var CRUD;
                 PersonaCRUD.SaveArray(personas);
             }
         };
+        PersonaCRUD.Buscar = function (query) {
+            var personas = PersonaCRUD.GetAll();
+            var retorno = new Array();
+            for (var _i = 0, personas_1 = personas; _i < personas_1.length; _i++) {
+                var p = personas_1[_i];
+                if (String(p.id) == query) {
+                    retorno.push(p);
+                }
+                if (p.nombre.indexOf(query) >= 0) {
+                    retorno.push(p);
+                }
+                if (p.apellido.indexOf(query) >= 0) {
+                    retorno.push(p);
+                }
+                if (p.email.indexOf(query) >= 0) {
+                    retorno.push(p);
+                }
+            }
+            return retorno;
+        };
         return PersonaCRUD;
     }());
     CRUD.PersonaCRUD = PersonaCRUD;
@@ -208,6 +228,27 @@ var Helpers;
     var TableHelper = /** @class */ (function () {
         function TableHelper() {
         }
+        TableHelper.CreateSearch = function () {
+            var searchInput = document.createElement("input");
+            searchInput.setAttribute("type", "text");
+            searchInput.setAttribute("id", "searchInput");
+            searchInput.setAttribute("placeholder", "Buscar");
+            var searchButton = document.createElement("button");
+            searchButton.append(document.createTextNode("Buscar"));
+            searchButton.setAttribute("class", "btn btn-success");
+            searchButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                var personas = CRUD.PersonaCRUD.Buscar(searchInput.value);
+                if (personas.length > 0) {
+                    TableHelper.CreateTable(personas);
+                }
+                else {
+                    alert("No se encontro la persona");
+                }
+            });
+            $("#search").append(searchInput);
+            $("#search").append(searchButton);
+        };
         TableHelper.CreateFilters = function () {
             var selectSexo = document.createElement("select");
             var optionSexoF = document.createElement("option");
@@ -609,7 +650,11 @@ $(document).ready(function () {
     Helpers.TableHelper.CreateTable(CRUD.PersonaCRUD.GetAll());
     Helpers.TableHelper.CreateFilters();
     Helpers.TableHelper.CreateColumnSelector();
+    Helpers.TableHelper.CreateSearch();
+    SortableHeaders();
     document.getElementById("btnAlta").addEventListener("click", Helpers.FormHelper.ShowForm.bind(null, null));
+});
+function SortableHeaders() {
     document.getElementById("head_id").addEventListener("click", function () {
         console.log("sorting by id");
         Helpers.TableHelper.SortBy("id");
@@ -634,4 +679,4 @@ $(document).ready(function () {
         console.log("sorting by gender");
         Helpers.TableHelper.SortBy("gender");
     });
-});
+}

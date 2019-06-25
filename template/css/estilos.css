@@ -101,7 +101,8 @@ nav{
     z-index:300;
 }
 
-#filters
+#th
 {
-    
+    text-decoration:underline;
+    cursor:pointer;
 }

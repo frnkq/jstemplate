@@ -88,6 +88,34 @@ namespace CRUD
                 PersonaCRUD.SaveArray(personas);
             }
         }
+
+        static Buscar(query:string):Entidades.Persona[]
+        {
+            let personas = PersonaCRUD.GetAll();
+            let retorno = new Array<Entidades.Persona>();
+            for(let p of personas)
+            {
+                if(String(p.id) == query)
+                {
+                    retorno.push(p);
+                }
+                if(p.nombre.indexOf(query) >= 0)
+                {
+                    retorno.push(p);
+                }
+
+                if(p.apellido.indexOf(query) >= 0)
+                {
+                    retorno.push(p);
+                }
+
+                if(p.email.indexOf(query) >= 0)
+                {
+                    retorno.push(p);
+                }
+            }
+            return retorno;
+        }
     }
     
 }

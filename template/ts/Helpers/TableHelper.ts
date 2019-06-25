@@ -3,6 +3,33 @@ namespace Helpers
 {
     export class TableHelper
     {
+        static CreateSearch()
+        {
+            let searchInput = document.createElement("input");
+            searchInput.setAttribute("type", "text");
+            searchInput.setAttribute("id", "searchInput");
+            searchInput.setAttribute("placeholder", "Buscar");
+
+            let searchButton = document.createElement("button");
+            searchButton.append(document.createTextNode("Buscar"));
+            searchButton.setAttribute("class", "btn btn-success");
+            searchButton.addEventListener("click", function(e)
+            {
+                e.preventDefault();
+                let personas = CRUD.PersonaCRUD.Buscar(searchInput.value);
+                if(personas.length > 0)
+                {
+                    
+                    TableHelper.CreateTable(personas);
+                }
+                else
+                {
+                    alert("No se encontro la persona");
+                }
+            });
+            $("#search").append(searchInput);
+            $("#search").append(searchButton);
+        }
         static CreateFilters()
         {
             let selectSexo = document.createElement("select");
