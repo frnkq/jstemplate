@@ -126,6 +126,66 @@ namespace Helpers
             TableHelper.GetData();
         }
 
+        static SortBy(field:string)
+        {
+            switch(field)
+            {
+                case "id":
+                TableHelper.CreateTable(
+                    TableHelper.GetPersonasFromTable().sort(function(a,b)
+                    {
+                        return a.id > b.id ? 1 : -1;
+                    })
+                );
+                break;
+
+                case "nombre":
+                TableHelper.CreateTable(
+                    TableHelper.GetPersonasFromTable().sort(function(a,b)
+                    {
+                        return a.nombre > b.nombre ? 1 : -1;
+                    })
+                );
+                break;
+
+                case "apellido":
+                TableHelper.CreateTable(
+                    TableHelper.GetPersonasFromTable().sort(function(a,b)
+                    {
+                        return a.apellido > b.apellido ? 1 : -1;
+                    })
+                );
+                break;
+
+                case "edad":
+                TableHelper.CreateTable(
+                    TableHelper.GetPersonasFromTable().sort(function(a,b)
+                    {
+                        return a.edad > b.edad ? 1 : -1;
+                    })
+                );
+                break;
+
+                case "email":
+                TableHelper.CreateTable(
+                    TableHelper.GetPersonasFromTable().sort(function(a,b)
+                    {
+                        return a.email > b.email ? 1 : -1;
+                    })
+                );
+                break;
+
+                case "gender":
+                TableHelper.CreateTable(
+                    TableHelper.GetPersonasFromTable().sort(function(a,b)
+                    {
+                        return a.sexo > b.sexo ? 1 : -1;
+                    })
+                );
+                break;
+            }
+        }
+
         static TdClick(e:any)
         {
             let id = e.target.parentNode.getAttribute("id");

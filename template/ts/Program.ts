@@ -115,4 +115,39 @@ $(document).ready(function()
     Helpers.TableHelper.CreateColumnSelector();
     
     (document.getElementById("btnAlta") as any).addEventListener("click", Helpers.FormHelper.ShowForm.bind(null, null));
+    (document.getElementById("head_id") as HTMLElement).addEventListener("click", function()
+            {
+                console.log("sorting by id");
+                Helpers.TableHelper.SortBy("id")
+            });
+
+            (document.getElementById("head_nombre") as HTMLElement).addEventListener("click", function()
+            {
+                console.log("sorting by name");
+                Helpers.TableHelper.SortBy("nombre")
+            });
+
+            (document.getElementById("head_apellido") as HTMLElement).addEventListener("click", function()
+            {
+                console.log("sorting by apellido");
+                Helpers.TableHelper.SortBy("apellido")
+            });
+
+            (document.getElementById("head_edad") as HTMLElement).addEventListener("click", function()
+            {
+                console.log("sorting by edad");
+                Helpers.TableHelper.SortBy("edad")
+            });
+
+            (document.getElementById("head_email") as HTMLElement).addEventListener("click", function()
+            {
+                console.log("sorting by email");
+                Helpers.TableHelper.SortBy("email")
+            });
+
+            (document.getElementById("head_gender") as HTMLElement).addEventListener("click", function()
+            {
+                console.log("sorting by gender");
+                Helpers.TableHelper.SortBy("gender")
+            });
 });

@@ -299,6 +299,40 @@ var Helpers;
             TableHelper.FilterTable();
             TableHelper.GetData();
         };
+        TableHelper.SortBy = function (field) {
+            switch (field) {
+                case "id":
+                    TableHelper.CreateTable(TableHelper.GetPersonasFromTable().sort(function (a, b) {
+                        return a.id > b.id ? 1 : -1;
+                    }));
+                    break;
+                case "nombre":
+                    TableHelper.CreateTable(TableHelper.GetPersonasFromTable().sort(function (a, b) {
+                        return a.nombre > b.nombre ? 1 : -1;
+                    }));
+                    break;
+                case "apellido":
+                    TableHelper.CreateTable(TableHelper.GetPersonasFromTable().sort(function (a, b) {
+                        return a.apellido > b.apellido ? 1 : -1;
+                    }));
+                    break;
+                case "edad":
+                    TableHelper.CreateTable(TableHelper.GetPersonasFromTable().sort(function (a, b) {
+                        return a.edad > b.edad ? 1 : -1;
+                    }));
+                    break;
+                case "email":
+                    TableHelper.CreateTable(TableHelper.GetPersonasFromTable().sort(function (a, b) {
+                        return a.email > b.email ? 1 : -1;
+                    }));
+                    break;
+                case "gender":
+                    TableHelper.CreateTable(TableHelper.GetPersonasFromTable().sort(function (a, b) {
+                        return a.sexo > b.sexo ? 1 : -1;
+                    }));
+                    break;
+            }
+        };
         TableHelper.TdClick = function (e) {
             var id = e.target.parentNode.getAttribute("id");
             console.log("click");
@@ -576,4 +610,28 @@ $(document).ready(function () {
     Helpers.TableHelper.CreateFilters();
     Helpers.TableHelper.CreateColumnSelector();
     document.getElementById("btnAlta").addEventListener("click", Helpers.FormHelper.ShowForm.bind(null, null));
+    document.getElementById("head_id").addEventListener("click", function () {
+        console.log("sorting by id");
+        Helpers.TableHelper.SortBy("id");
+    });
+    document.getElementById("head_nombre").addEventListener("click", function () {
+        console.log("sorting by name");
+        Helpers.TableHelper.SortBy("nombre");
+    });
+    document.getElementById("head_apellido").addEventListener("click", function () {
+        console.log("sorting by apellido");
+        Helpers.TableHelper.SortBy("apellido");
+    });
+    document.getElementById("head_edad").addEventListener("click", function () {
+        console.log("sorting by edad");
+        Helpers.TableHelper.SortBy("edad");
+    });
+    document.getElementById("head_email").addEventListener("click", function () {
+        console.log("sorting by email");
+        Helpers.TableHelper.SortBy("email");
+    });
+    document.getElementById("head_gender").addEventListener("click", function () {
+        console.log("sorting by gender");
+        Helpers.TableHelper.SortBy("gender");
+    });
 });
